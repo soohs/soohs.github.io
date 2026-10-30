@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>장내바이러스연구실</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="건양대학교 제약생명공학과 장내바이러스연구실(Enteric Virology Laboratory, PI 서수환). 노로바이러스·장내 마이크로바이옴·미생물 위해성평가 연구.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@500;700&display=swap">
+<style>
+/* Layout: a specimen-sheet page. A masthead with a rotating capsid, then sections set on a two-track grid:
+   a narrow label track (Korean name, English name, count) and a wide content track. */
+:root{
+  --paper:#f3f6f5; --sheet:#ffffff; --ink:#14201d; --muted:#56655f; --rule:#d3dcd8;
+  --accent:#0d6b5c; --accent-soft:#e1efeb; --mark:#9a5a14;
+  --f-display:"Noto Serif KR","Apple SD Gothic Neo",Georgia,serif;
+  --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:72px;
+  --wrap:1120px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#0e1513; --sheet:#141d1a; --ink:#e2ebe8; --muted:#94a59f; --rule:#25332f;
+  --accent:#58c1ab; --accent-soft:#16302a; --mark:#e0a35c; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --paper:#0e1513; --sheet:#141d1a; --ink:#e2ebe8; --muted:#94a59f; --rule:#25332f;
+  --accent:#58c1ab; --accent-soft:#16302a; --mark:#e0a35c; color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.75 var(--f-body);
+  -webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;line-height:1.3;text-wrap:balance;margin:0}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+
+/* ---------- masthead ---------- */
+.mast{border-bottom:1px solid var(--rule);background:var(--sheet)}
+.mast .wrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:var(--s6);align-items:center;padding-block:var(--s7) var(--s6)}
+.affil{font-size:14px;color:var(--muted);letter-spacing:.02em;margin:0 0 var(--s4)}
+.affil b{color:var(--ink);font-weight:600}
+.mast h1{font-size:clamp(34px,6vw,58px);letter-spacing:-.01em}
+.mast .en{font-family:var(--f-mono);font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:var(--s2) 0 var(--s5)}
+.lede{font-size:18px;max-width:34em;margin:0}
+.keys{display:flex;flex-wrap:wrap;gap:var(--s2);margin:var(--s5) 0 0;padding:0;list-style:none}
+.keys li{font-size:13px;padding:2px 10px;border:1px solid var(--rule);border-radius:999px;color:var(--muted);background:var(--paper)}
+.capsid{position:relative;max-width:300px;width:100%;justify-self:end}
+.capsid canvas{width:100%;aspect-ratio:1/1;display:block}
+.capsid figcaption{font-family:var(--f-mono);font-size:11.5px;color:var(--muted);text-align:center;letter-spacing:.04em}
+
+/* ---------- nav ---------- */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--paper)}
+nav.toc{position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;background:color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
+nav.toc ul{display:flex;gap:var(--s5);margin:0;padding:0;list-style:none;overflow-x:auto;scrollbar-width:none}
+nav.toc ul::-webkit-scrollbar{display:none}
+nav.toc a{display:block;padding:12px 0;font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent}
+nav.toc a:hover,nav.toc a.on{color:var(--ink);border-bottom-color:var(--accent)}
+
+/* ---------- sections ---------- */
+section{border-bottom:1px solid var(--rule);scroll-margin-top:52px}
+section > .wrap{display:grid;grid-template-columns:200px minmax(0,1fr);gap:var(--s6);padding-block:var(--s8)}
+.label h2{font-size:24px}
+.label .en{display:block;font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:var(--s2)}
+.label .count{display:block;font-family:var(--f-mono);font-size:12px;color:var(--accent);margin-top:var(--s3)}
+.body{min-width:0;display:flex;flex-direction:column;gap:var(--s6)}
+.intro{font-size:17px;max-width:40em;margin:0}
+.sub{font-family:var(--f-body);font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 var(--s3)}
+
+/* research */
+.themes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.theme{background:var(--sheet);padding:var(--s5);display:flex;flex-direction:column;gap:var(--s3);min-width:0}
+.theme .tag{font-family:var(--f-mono);font-size:12px;color:var(--accent);letter-spacing:.04em}
+.theme h3{font-size:19px}
+.theme p{margin:0;font-size:15px}
+.theme .kw{font-family:var(--f-mono);font-size:12px;color:var(--muted);line-height:1.6;margin-top:auto;padding-top:var(--s2);border-top:1px dashed var(--rule)}
+.thread{font-size:15px;color:var(--muted);margin:0;padding-left:var(--s4);border-left:2px solid var(--accent)}
+
+/* projects */
+.proj{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.proj li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s2) var(--s5);padding:var(--s4) 0;border-bottom:1px solid var(--rule)}
+.proj .t{font-weight:600;font-size:16px;line-height:1.55}
+.proj .f{font-size:14px;color:var(--muted);grid-column:1}
+.proj .r{grid-column:2;grid-row:1 / span 2;text-align:right;font-size:13px;white-space:nowrap}
+.proj .r b{display:block;color:var(--accent);font-weight:600}
+.proj .r span{font-family:var(--f-mono);color:var(--muted)}
+
+/* PI */
+.pi{display:grid;grid-template-columns:220px minmax(0,1fr);gap:var(--s6);align-items:start}
+.pi figure{margin:0}
+.pi img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
+.pi h3{font-size:28px}
+.pi .role{margin:var(--s1) 0 var(--s4);color:var(--muted)}
+.pi .bio{margin:0 0 var(--s4)}
+.links{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s4);font-size:14px}
+.cv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s6) var(--s6)}
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--s3)}
+.tl li{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:var(--s3);font-size:15px;line-height:1.55}
+.tl .y{font-family:var(--f-mono);font-size:13px;color:var(--muted);padding-top:2px;font-variant-numeric:tabular-nums}
+.tl small{display:block;color:var(--muted);font-size:13.5px}
+.chips{display:flex;flex-wrap:wrap;gap:var(--s2);list-style:none;margin:0;padding:0}
+.chips li{font-size:14px;padding:4px 12px;background:var(--accent-soft);border-radius:2px}
+
+/* publications */
+.pubbar{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center}
+.pubbar button{font:500 13px/1 var(--f-body);color:var(--muted);background:transparent;border:1px solid var(--rule);border-radius:999px;padding:7px 12px;cursor:pointer}
+.pubbar button .n{font-family:var(--f-mono);margin-left:4px;opacity:.75}
+.pubbar button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.pubbar .sp{flex:1}
+.pubbar a{font-size:14px}
+.year{display:grid;grid-template-columns:4.2em minmax(0,1fr);gap:var(--s4);padding:var(--s4) 0;border-top:1px solid var(--rule)}
+.year > .y{font-family:var(--f-mono);font-size:15px;color:var(--accent);font-weight:500}
+.year ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--s4)}
+.pub{font-size:15px;line-height:1.6}
+.pub .ti{font-weight:600;color:var(--ink);text-decoration:none}
+.pub .ti:hover{text-decoration:underline;color:var(--accent)}
+.pub .au{display:block;color:var(--muted);font-size:14px}
+.pub .au b{color:var(--ink);font-weight:600}
+.pub .jo{display:block;font-size:14px}
+.pub .jo i{font-style:italic}
+.badge{display:inline-block;font:500 11.5px/1.5 var(--f-body);padding:0 6px;margin-left:6px;border:1px solid var(--mark);color:var(--mark);border-radius:2px;vertical-align:1px;white-space:nowrap}
+.badge.key{border-color:var(--accent);color:var(--accent)}
+.empty{color:var(--muted);font-size:15px;margin:0}
+
+/* news */
+.news{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.news li{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:var(--s4);padding:var(--s3) 0;border-bottom:1px solid var(--rule);font-size:15px;line-height:1.6}
+.news .d{font-family:var(--f-mono);font-size:13px;color:var(--muted);padding-top:2px}
+.more{align-self:flex-start;font:500 14px var(--f-body);color:var(--accent);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+/* members & join */
+.group{margin:0;display:flex;flex-direction:column;gap:var(--s2)}
+.group img{width:100%;height:auto;aspect-ratio:1600/799;object-fit:cover;border-radius:2px}
+.group figcaption{font-size:13px;color:var(--muted)}
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--s4)}
+.person{border:1px solid var(--rule);background:var(--sheet);padding:var(--s4);display:flex;gap:var(--s4);align-items:center}
+.person img{width:56px;height:56px;object-fit:cover;border-radius:50%}
+.person .ini{width:56px;height:56px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-family:var(--f-display);font-weight:700;flex:none}
+.person b{display:block}
+.person span{display:block;font-size:13.5px;color:var(--muted);line-height:1.5}
+.open{border:1px dashed var(--accent);padding:var(--s4);font-size:15px;display:flex;align-items:center}
+.learn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3) var(--s5);list-style:none;margin:0;padding:0}
+.learn li{font-size:15px;padding-left:var(--s4);position:relative}
+.learn li::before{content:"";position:absolute;left:0;top:.72em;width:7px;height:7px;border:1.5px solid var(--accent);transform:rotate(45deg)}
+.club{background:var(--sheet);border:1px solid var(--rule);padding:var(--s5)}
+.club h3{font-size:19px;margin-bottom:var(--s2)}
+.club p{margin:0;font-size:15px}
+
+/* contact */
+.contact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s5)}
+.contact dt{font-size:13px;color:var(--muted);letter-spacing:.04em}
+.contact dd{margin:var(--s1) 0 0;font-size:16px}
+.copy{display:inline-flex;align-items:center;gap:var(--s3);flex-wrap:wrap}
+.copy button{font:500 12.5px var(--f-body);color:var(--accent);background:var(--accent-soft);border:0;padding:4px 10px;border-radius:2px;cursor:pointer}
+
+footer{padding-block:var(--s6);font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content:space-between}
+
+/* ---------- narrow ---------- */
+@media (max-width: 860px){
+  .mast .wrap{grid-template-columns:minmax(0,1fr)}
+  .capsid{justify-self:center;max-width:180px}
+  section > .wrap{grid-template-columns:minmax(0,1fr);gap:var(--s5);padding-block:var(--s7)}
+  .label{display:flex;align-items:baseline;gap:var(--s3);flex-wrap:wrap}
+  .label .en,.label .count{margin-top:0}
+}
+@media (max-width: 640px){
+  body{font-size:15.5px}
+  .themes,.cv,.contact,.learn{grid-template-columns:minmax(0,1fr)}
+  .pi{grid-template-columns:minmax(0,1fr)}
+  .pi figure{max-width:200px}
+  .proj li{grid-template-columns:minmax(0,1fr)}
+  .proj .r{grid-column:1;grid-row:auto;text-align:left}
+  .proj .r b,.proj .r span{display:inline;margin-right:var(--s2)}
+  .tl li{grid-template-columns:minmax(0,1fr);gap:0}
+  .year{grid-template-columns:minmax(0,1fr);gap:var(--s2)}
+  .news li{grid-template-columns:minmax(0,1fr);gap:0}
+}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <div>
+      <p class="affil"><b>건양대학교 제약생명공학과</b> · Department of Pharmaceutical Biotechnology, Konyang University</p>
+      <h1>장내바이러스연구실</h1>
+      <p class="en">Enteric Virology Laboratory</p>
+      <p class="lede">노로바이러스를 비롯한 장관바이러스(enteric virus)가 사람, 식품, 환경 사이를 어떻게 옮겨 다니는지 연구합니다. 바이러스를 찾아내는 기술부터 장내 미생물과의 상호작용, 그 위험을 수치로 평가하는 일까지 한 흐름으로 다룹니다.</p>
+      <ul class="keys">
+        <li>노로바이러스</li><li>장내 마이크로바이옴</li><li>미생물 위해성평가</li><li>압타머 · 신속검출</li><li>생물정보학</li>
+      </ul>
+    </div>
+    <figure class="capsid" aria-hidden="true">
+      <canvas id="capsid" width="600" height="600"></canvas>
+      <figcaption>Norovirus capsid · icosahedral, T = 3 · 180 × VP1</figcaption>
+    </figure>
+  </div>
+</header>
+
+<nav class="toc" aria-label="섹션">
+  <div class="wrap">
+    <ul>
+      <li><a href="#research">연구</a></li>
+      <li><a href="#projects">연구과제</a></li>
+      <li><a href="#pi">책임교수</a></li>
+      <li><a href="#publications">논문</a></li>
+      <li><a href="#news">소식</a></li>
+      <li><a href="#members">구성원</a></li>
+      <li><a href="#join">함께하기</a></li>
+      <li><a href="#contact">연락처</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+<section id="research">
+  <div class="wrap">
+    <div class="label"><h2>연구</h2><span class="en">Research</span></div>
+    <div class="body">
+      <p class="intro">네 가지 주제를 다루며, 모든 주제는 차세대 염기서열 분석(NGS) 데이터와 생물정보학 분석으로 이어져 있습니다.</p>
+      <div class="themes">
+        <article class="theme">
+          <span class="tag">01 · Molecular epidemiology</span>
+          <h3>장내 바이러스 분자역학과 환경 감시</h3>
+          <p>노로바이러스, A형간염바이러스, 사포바이러스의 유전형과 집단발생 양상을 분석합니다. 하수·하천과 신선 농산물에서 사람 유래 바이러스 오염을 알려주는 지표(crAssphage)를 평가하고, 하수 기반 감시를 H5N1 같은 인수공통감염병으로 넓히고 있습니다.</p>
+          <span class="kw">norovirus GII.4 · wastewater surveillance · crAssphage · full-length sequencing</span>
+        </article>
+        <article class="theme">
+          <span class="tag">02 · Gut microbiome &amp; virome</span>
+          <h3>장내 마이크로바이옴과 바이롬</h3>
+          <p>노로바이러스에 감염되었다가 회복하는 동안 영유아 장내 미생물과 파지가 어떻게 바뀌는지 봅니다. 인체 장 오가노이드(엔테로이드) 모델로 포스트바이오틱스의 항바이러스 기전을 연구하고, 발효식품의 미생물 군집도 분석합니다.</p>
+          <span class="kw">metagenomics · phageome · intestinal enteroid · Akkermansia · fermented foods</span>
+        </article>
+        <article class="theme">
+          <span class="tag">03 · QMRA &amp; regulatory science</span>
+          <h3>미생물 위해성평가와 규제과학</h3>
+          <p>식품 속 병원체가 사람에게 미치는 위험을 정량적으로 평가하고, 성장 예측모델과 검체 채취 기준을 만듭니다. 바실루스 세레우스, 식용얼음 같은 미생물 기준·규격의 재평가를 수행하며, 식품의약품안전처에서 11년간 쌓은 규제 현장의 경험을 연구에 연결합니다.</p>
+          <span class="kw">QMRA · predictive microbiology · microbiological criteria · sampling plan</span>
+        </article>
+        <article class="theme">
+          <span class="tag">04 · Rapid detection</span>
+          <h3>병원체 신속 검출 기술</h3>
+          <p>표적에 결합하는 핵산 압타머를 SELEX로 선별해 바이러스와 세균을 포집·검출합니다. PNA 융해곡선 분석, 멀티플렉스 PCR, NGS 기반 전장 유전체 분석으로 검출과 유전형 분류를 함께 해결합니다.</p>
+          <span class="kw">aptamer · SELEX · qPCR · PNA melting array · NGS</span>
+        </article>
+      </div>
+      <p class="thread">미국 노스캐롤라이나주립대에서 노로바이러스 압타머 연구로 시작해, 식품의약품안전처의 식중독 원인조사와 위해성평가, 미국 CDC 바이러스질환과의 노로바이러스 연구를 거쳐 지금의 연구실로 이어졌습니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="label"><h2>연구과제</h2><span class="en">Funded projects</span><span class="count mono" id="projCount"></span></div>
+    <div class="body">
+      <ul class="proj" id="projList"></ul>
+    </div>
+  </div>
+</section>
+
+<section id="pi">
+  <div class="wrap">
+    <div class="label"><h2>책임교수</h2><span class="en">Principal investigator</span></div>
+    <div class="body">
+      <div class="pi">
+        <figure><img src="images/profile.jpg" alt="서수환 교수" width="640" height="800" loading="lazy"></figure>
+        <div>
+          <h3>서수환 <span style="font-family:var(--f-body);font-weight:500;font-size:18px;color:var(--muted)">Soohwan Suh, Ph.D.</span></h3>
+          <p class="role">조교수 · 학과장, 건양대학교 제약생명공학과</p>
+          <p class="bio">장관바이러스 연구자입니다. 노스캐롤라이나주립대에서 식품과학 박사학위를 받은 뒤, 식품의약품안전처 식품의약품안전평가원에서 11년간 연구직으로 식중독 바이러스와 미생물 위해성평가를 담당했습니다. 이 기간 중 2년간 미국 질병통제예방센터(CDC) 바이러스질환과에서 노로바이러스 분자역학과 장 엔테로이드 감염모델을 연구했습니다. 2024년 건양대학교에 부임했습니다.</p>
+          <div class="links">
+            <a href="https://scholar.google.co.kr/citations?user=sbL_JwIAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Google Scholar</a>
+            <a href="#publications">논문 목록</a>
+            <a href="#contact">연락처</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv">
+        <div>
+          <h4 class="sub">학력</h4>
+          <ul class="tl">
+            <li><span class="y">2012.12</span><span>Ph.D., 식품과학, North Carolina State University<small>지도교수 Lee-Ann Jaykus · Listeria spp. 특이 DNA 압타머 선별과 특성 연구</small></span></li>
+            <li><span class="y">2004.02</span><span>M.S., 생명공학, 고려대학교<small>감마선 조사 홍국균 변이주 연구</small></span></li>
+            <li><span class="y">2001.02</span><span>B.S., 식품공학, 건양대학교</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="sub">경력</h4>
+          <ul class="tl">
+            <li><span class="y">2024.09–</span><span>건양대학교 제약생명공학과 조교수<small>2025.07부터 학과장</small></span></li>
+            <li><span class="y">2020.12–2022.12</span><span>미국 CDC 바이러스질환과 방문연구원<small>식품의약품안전처 파견</small></span></li>
+            <li><span class="y">2013.11–2024.08</span><span>식품의약품안전처 연구직<small>식품의약품안전평가원 식품미생물 분야</small></span></li>
+            <li><span class="y">2013.01–2013.11</span><span>North Carolina State University 박사후연구원<small>USDA-NIFA Food Virology Collaborative</small></span></li>
+            <li><span class="y">2006.03–2008.06</span><span>아워홈 식품연구원 연구원</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="sub">위원 · 대외활동</h4>
+          <ul class="tl">
+            <li><span class="y">2026–2028</span><span>식품의약품안전처 식품위생심의위원회 위원<small>미생물분과</small></span></li>
+            <li><span class="y">2026–2028</span><span>식품의약품안전평가원 새로운 식품원료 전문가 자문단 위원</span></li>
+            <li><span class="y">2025–2028</span><span>식품의약품안전처 위해성평가 전문위원회 위원<small>식품 분야</small></span></li>
+            <li><span class="y">2018, 2019</span><span>Codex 항생제내성 특별위원회(TFAMR) 한국 대표단<small>부산(2018), 평창(2019)</small></span></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="sub">수상</h4>
+          <ul class="tl">
+            <li><span class="y">2025.09</span><span>건양대학교 총장 표창<small>RISE 사업 선정 기여</small></span></li>
+            <li><span class="y">2019.04</span><span>식품의약품안전처장 표창<small>정책 홍보</small></span></li>
+            <li><span class="y">2016.12</span><span>식품의약품안전처장 표창<small>농수산물 안전관리</small></span></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="sub">특허</h4>
+          <ul class="tl">
+            <li><span class="y">2024 등록</span><span>사포바이러스 검출용 프라이머 세트 및 이를 이용한 검출 방법</span></li>
+            <li><span class="y">2024 출원</span><span>전장 유전체 분석을 통한 노로바이러스 검출 및 분류 방법</span></li>
+            <li><span class="y">2024 출원</span><span>멀티플렉스 PCR 기반 NGS를 이용한 A형간염바이러스 전장 유전체 분석 방법</span></li>
+            <li><span class="y">2024 출원</span><span>유도만능줄기세포 유래 간세포를 이용한 야생형 A형간염바이러스 배양 방법</span></li>
+            <li><span class="y">2011 출원</span><span>들깨 추출물을 포함하는 뇌신경질환 예방·치료용 조성물</span></li>
+            <li><span class="y">2006 등록</span><span>홍국균 변이주 및 홍국 발효 추출물을 포함하는 콜레스테롤 저해제</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="sub">담당 교과목</h4>
+          <ul class="chips">
+            <li>제약미생물학</li><li>생물정보학</li><li>빅데이터 신약개발</li><li>생명의약품공학</li><li>세포생물학</li><li>생화학 및 생화학실험</li>
+          </ul>
+          <h4 class="sub" style="margin-top:var(--s5)">학회</h4>
+          <ul class="chips">
+            <li>IAFP</li><li>한국식품과학회</li><li>한국식품위생안전성학회</li><li>KSEA</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <div class="label"><h2>논문</h2><span class="en">Publications</span><span class="count mono" id="pubCount"></span></div>
+    <div class="body">
+      <div class="pubbar" id="pubBar" role="group" aria-label="주제별 보기"></div>
+      <div id="pubList"></div>
+    </div>
+  </div>
+</section>
+
+<section id="news">
+  <div class="wrap">
+    <div class="label"><h2>소식</h2><span class="en">News</span></div>
+    <div class="body">
+      <ul class="news" id="newsList"></ul>
+      <button class="more" id="newsMore" type="button" hidden>지난 소식 더 보기</button>
+    </div>
+  </div>
+</section>
+
+<section id="members">
+  <div class="wrap">
+    <div class="label"><h2>구성원</h2><span class="en">People</span></div>
+    <div class="body">
+      <figure class="group"><img src="images/lab-group.jpg" alt="장내바이러스연구실 구성원 단체 사진" width="1600" height="799" loading="lazy"><figcaption>장내바이러스연구실 구성원 · 2025년 10월</figcaption></figure>
+      <div class="people" id="people"></div>
+    </div>
+  </div>
+</section>
+
+<section id="join">
+  <div class="wrap">
+    <div class="label"><h2>함께하기</h2><span class="en">Join us</span></div>
+    <div class="body">
+      <p class="intro">학부연구생을 상시 모집합니다. 바이러스와 미생물을 실험실에서 직접 다뤄 보고, 그 데이터를 분석해 결과로 만드는 과정을 함께 경험합니다.</p>
+      <div>
+        <h4 class="sub">연구실에서 배우는 것</h4>
+        <ul class="learn">
+          <li>핵산 추출, PCR과 qPCR, 염기서열 분석</li>
+          <li>바이러스·세균 검출과 유전형 분석</li>
+          <li>NGS 데이터 처리와 생물정보학 분석 (Linux, Python, R)</li>
+          <li>미생물 위해성평가와 예측모델링</li>
+          <li>논문 읽기와 학회 발표 준비</li>
+          <li>식약처 연구과제 수행 경험</li>
+        </ul>
+      </div>
+      <div class="club">
+        <h3>연구동아리 mBiom</h3>
+        <p>제약생명공학과 학부생이 함께하는 연구동아리입니다. 장내 미생물과 바이러스를 주제로 실험과 데이터 분석을 경험하며, 연구실 활동으로 이어지는 입구 역할을 합니다.</p>
+      </div>
+      <p class="intro" style="font-size:16px">관심 있는 학생은 관심 주제와 함께 이메일로 연락 주세요. 대학원 진학, 공동연구, 산학협력 문의도 환영합니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="label"><h2>연락처</h2><span class="en">Contact</span></div>
+    <div class="body">
+      <dl class="contact">
+        <div><dt>이메일</dt><dd class="copy"><span id="mail">soohsuh@konyang.ac.kr</span><button type="button" data-copy="mail">복사</button></dd></div>
+        <div><dt>사무실 전화</dt><dd class="copy"><span id="tel" class="mono">042-600-8506</span><button type="button" data-copy="tel">복사</button></dd></div>
+        <div><dt>소속</dt><dd>건양대학교 제약생명공학과<br>장내바이러스연구실</dd></div>
+        <div><dt>주소</dt><dd>대전광역시 서구 관저동로 158<br>건양대학교 대전메디컬캠퍼스</dd></div>
+        <div><dt>외부 프로필</dt><dd><a href="https://scholar.google.co.kr/citations?user=sbL_JwIAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Google Scholar</a></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 장내바이러스연구실 · Enteric Virology Laboratory, Konyang University</span>
+    <span class="mono">최종 수정 2026.10.31</span>
+  </div>
+</footer>
+
+<script src="data/site-data.js"></script>
+<script>
+(function(){
+  var LAB = window.LAB || {news:[],projects:[],publications:[],members:[],alumni:[]};
+  function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+
+  /* projects */
+  var pl=document.getElementById("projList");
+  pl.innerHTML=LAB.projects.map(function(p){
+    return '<li><span class="t">'+esc(p.title)+'</span><span class="f">'+esc(p.funder)+'</span><span class="r"><b>'+esc(p.role)+'</b><span>'+esc(p.period)+'</span></span></li>';
+  }).join("");
+  document.getElementById("projCount").textContent=LAB.projects.length+"건 진행";
+
+  /* publications */
+  var TOPICS=[["all","전체"],["virus","장내 바이러스"],["micro","마이크로바이옴"],["risk","위해성평가"],["detect","검출기술"],["etc","기타"]];
+  var ROLE={"1st":"제1저자","co1st":"제1저자","corr":"교신저자","cocorr":"공동교신저자"};
+  var pubs=LAB.publications.slice().sort(function(a,b){return b.year-a.year;});
+  var cur="all";
+  try{var saved=localStorage.getItem("evl-pub-topic"); if(saved && TOPICS.some(function(t){return t[0]===saved;})) cur=saved;}catch(e){}
+  function count(k){return pubs.filter(function(p){return k==="all"||(k==="key"?p.key:p.topic===k);}).length;}
+  var bar=document.getElementById("pubBar");
+  function drawBar(){
+    bar.innerHTML=TOPICS.filter(function(t){return count(t[0])>0;}).map(function(t){
+      return '<button type="button" data-k="'+t[0]+'" aria-pressed="'+(t[0]===cur)+'">'+t[1]+'<span class="n">'+count(t[0])+'</span></button>';
+    }).join("")+'<span class="sp"></span><a href="https://scholar.google.co.kr/citations?user=sbL_JwIAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Google Scholar ↗</a>';
+  }
+  function hl(a){return esc(a).replace(/\bSH Suh\b/g,"<b>SH Suh</b>");}
+  function drawPubs(){
+    var list=pubs.filter(function(p){return cur==="all"||(cur==="key"?p.key:p.topic===cur);});
+    var years=[];list.forEach(function(p){if(years.indexOf(p.year)<0)years.push(p.year);});
+    document.getElementById("pubList").innerHTML=years.map(function(y){
+      return '<div class="year"><span class="y">'+y+'</span><ol>'+list.filter(function(p){return p.year===y;}).map(function(p){
+        var q="https://scholar.google.com/scholar?q="+encodeURIComponent('"'+p.title+'"');
+        return '<li class="pub"><a class="ti" href="'+q+'" target="_blank" rel="noopener">'+esc(p.title)+'</a>'+
+          (ROLE[p.role]?'<span class="badge">'+ROLE[p.role]+'</span>':'')+
+          '<span class="au">'+hl(p.authors)+'</span><span class="jo"><i>'+esc(p.journal)+'</i>, '+esc(p.cite)+'</span></li>';
+      }).join("")+'</ol></div>';
+    }).join("") || '<p class="empty">해당 주제의 논문이 없습니다.</p>';
+  }
+  bar.addEventListener("click",function(e){
+    var b=e.target.closest("button"); if(!b) return;
+    cur=b.getAttribute("data-k"); try{localStorage.setItem("evl-pub-topic",cur);}catch(err){}
+    drawBar(); drawPubs();
+  });
+  drawBar(); drawPubs();
+  var journals=pubs.filter(function(p){return !/book chapter/.test(p.title);}).length;
+  document.getElementById("pubCount").textContent="논문 "+journals+"편 · 저서 1편";
+
+  /* news */
+  var nl=document.getElementById("newsList"), more=document.getElementById("newsMore"), SHOW=8;
+  function drawNews(all){
+    var items=all?LAB.news:LAB.news.slice(0,SHOW);
+    nl.innerHTML=items.map(function(n){return '<li><span class="d">'+esc(n.date)+'</span><span>'+esc(n.text)+(n.link?' <a href="'+esc(n.link)+'" target="_blank" rel="noopener">'+esc(n.source||'기사')+' 기사 ↗</a>':'')+'</span></li>';}).join("");
+    more.hidden = all || LAB.news.length<=SHOW;
+  }
+  more.addEventListener("click",function(){drawNews(true);});
+  drawNews(false);
+
+  /* people */
+  var pe=document.getElementById("people");
+  var html='<div class="person"><img src="images/profile.jpg" alt="" width="56" height="56" loading="lazy"><div><b>서수환</b><span>책임교수 · Principal Investigator</span></div></div>';
+  html+=LAB.members.map(function(m){
+    var face=m.photo?'<img src="'+esc(m.photo)+'" alt="" width="56" height="56" loading="lazy">':'<span class="ini">'+esc((m.name||"?").charAt(0))+'</span>';
+    return '<div class="person">'+face+'<div><b>'+esc(m.name)+'</b><span>'+esc(m.role)+(m.since?' · '+esc(m.since)+'–':'')+'</span>'+(m.topic?'<span>'+esc(m.topic)+'</span>':'')+'</div></div>';
+  }).join("");
+  html+='<a class="open" href="#join">함께 연구할 학부연구생을 찾고 있습니다 →</a>';
+  pe.innerHTML=html;
+
+  /* copy */
+  document.addEventListener("click",function(e){
+    var b=e.target.closest("button[data-copy]"); if(!b) return;
+    var el=document.getElementById(b.getAttribute("data-copy")), txt=el.textContent;
+    function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);}
+    var done=function(){b.textContent="복사됨";setTimeout(function(){b.textContent="복사";},1600);};
+    try{navigator.clipboard.writeText(txt).then(done,function(){sel();});}catch(err){sel();}
+  });
+
+  /* nav highlight */
+  var links=[].slice.call(document.querySelectorAll("nav.toc a"));
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){
+      if(en.isIntersecting){links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+en.target.id);});}
+    });},{rootMargin:"-45% 0px -50% 0px"});
+    document.querySelectorAll("main section").forEach(function(s){io.observe(s);});
+  }
+
+  /* capsid: icosahedron wireframe with each face subdivided (T = 3 style triangulation) */
+  var cv=document.getElementById("capsid"), ctx=cv.getContext("2d");
+  var t=(1+Math.sqrt(5))/2;
+  var V=[[-1,t,0],[1,t,0],[-1,-t,0],[1,-t,0],[0,-1,t],[0,1,t],[0,-1,-t],[0,1,-t],[t,0,-1],[t,0,1],[-t,0,-1],[-t,0,1]];
+  var F=[[0,11,5],[0,5,1],[0,1,7],[0,7,10],[0,10,11],[1,5,9],[5,11,4],[11,10,2],[10,7,6],[7,1,8],[3,9,4],[3,4,2],[3,2,6],[3,6,8],[3,8,9],[4,9,5],[2,4,11],[6,2,10],[8,6,7],[9,8,1]];
+  function norm(p){var l=Math.hypot(p[0],p[1],p[2]);return [p[0]/l,p[1]/l,p[2]/l];}
+  function mix(a,b,c,u,v){var w=1-u-v;return norm([a[0]*w+b[0]*u+c[0]*v,a[1]*w+b[1]*u+c[1]*v,a[2]*w+b[2]*u+c[2]*v]);}
+  var N=3, tris=[];
+  F.forEach(function(f){
+    var a=V[f[0]],b=V[f[1]],c=V[f[2]];
+    for(var i=0;i<N;i++)for(var j=0;j<N-i;j++){
+      tris.push([mix(a,b,c,i/N,j/N),mix(a,b,c,(i+1)/N,j/N),mix(a,b,c,i/N,(j+1)/N)]);
+      if(j<N-i-1) tris.push([mix(a,b,c,(i+1)/N,j/N),mix(a,b,c,(i+1)/N,(j+1)/N),mix(a,b,c,i/N,(j+1)/N)]);
+    }
+  });
+  var five=V.map(norm);
+  function col(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim();}
+  function rot(p,ay,ax){var x=p[0]*Math.cos(ay)+p[2]*Math.sin(ay), z=-p[0]*Math.sin(ay)+p[2]*Math.cos(ay), y=p[1]*Math.cos(ax)-z*Math.sin(ax); z=p[1]*Math.sin(ax)+z*Math.cos(ax); return [x,y,z];}
+  function draw(a){
+    var W=cv.width,R=W*0.42,cx=W/2,cy=W/2, ink=col("--accent"), rule=col("--rule"), mark=col("--mark");
+    ctx.clearRect(0,0,W,W);
+    var ax=0.42;
+    var items=tris.map(function(tr){var p=tr.map(function(q){return rot(q,a,ax);});var z=(p[0][2]+p[1][2]+p[2][2])/3;return {p:p,z:z};}).sort(function(m,n){return m.z-n.z;});
+    items.forEach(function(it){
+      var front=it.z>0;
+      ctx.beginPath();
+      it.p.forEach(function(q,k){var X=cx+q[0]*R,Y=cy-q[1]*R; k?ctx.lineTo(X,Y):ctx.moveTo(X,Y);});
+      ctx.closePath();
+      ctx.globalAlpha=front?0.10+0.10*it.z:0.0;
+      ctx.fillStyle=ink; if(front) ctx.fill();
+      ctx.globalAlpha=front?0.55+0.4*it.z:0.18;
+      ctx.strokeStyle=front?ink:rule; ctx.lineWidth=front?1.6:1; ctx.stroke();
+    });
+    ctx.globalAlpha=1;
+    five.forEach(function(v){var q=rot(v,a,ax); if(q[2]<0) return; ctx.beginPath(); ctx.arc(cx+q[0]*R,cy-q[1]*R,4+3*q[2],0,7); ctx.fillStyle=mark; ctx.fill();});
+  }
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches, ang=0.6, last=0;
+  function loop(ts){ if(!last) last=ts; ang+=(ts-last)*0.00012; last=ts; draw(ang); requestAnimationFrame(loop); }
+  draw(ang);
+  if(!reduce) requestAnimationFrame(loop);
+  if(window.matchMedia){ matchMedia("(prefers-color-scheme: dark)").addEventListener("change",function(){draw(ang);}); }
+})();
+</script>
+</body>
+</html>
