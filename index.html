@@ -483,14 +483,16 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content
   drawNews(false);
 
   /* people */
-  var pe=document.getElementById("people");
+  var SHOWJOIN=!(LAB.settings&&LAB.settings.showJoin===false);
+    var pe=document.getElementById("people");
   var html='<div class="person"><img src="images/profile.jpg" alt="" width="56" height="56" loading="lazy"><div><b>서수환</b><span>책임교수 · Principal Investigator</span></div></div>';
   html+=LAB.members.map(function(m){
     var face=m.photo?'<img src="'+esc(m.photo)+'" alt="" width="56" height="56" loading="lazy">':'<span class="ini">'+esc((m.name||"?").charAt(0))+'</span>';
     return '<div class="person">'+face+'<div><b>'+esc(m.name)+'</b><span>'+esc(m.role)+(m.since?' · '+esc(m.since)+'–':'')+'</span>'+(m.topic?'<span>'+esc(m.topic)+'</span>':'')+'</div></div>';
   }).join("");
-  html+='<a class="open" href="#join">함께 연구할 학부연구생을 찾고 있습니다 →</a>';
+  if(SHOWJOIN) html+='<a class="open" href="#join">함께 연구할 학부연구생을 찾고 있습니다 →</a>';
   pe.innerHTML=html;
+  if(!SHOWJOIN){ document.getElementById("join").hidden=true; var jl=document.querySelector('nav.toc a[href="#join"]'); if(jl) jl.parentNode.hidden=true; }
 
   /* copy */
   document.addEventListener("click",function(e){
