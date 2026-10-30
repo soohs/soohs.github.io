@@ -15,7 +15,7 @@ window.LAB = {
     { date: "2026.09", text: "식품의약품안전처 식품위생심의위원회 미생물분과 위원 위촉 (2026.09–2028.08)" },
     { date: "2026.09", text: "교육부 글로컬 R&D 지원사업 신규과제 선정 (식품생명공학과 김병용 교수 공동, 3년간 6억 원) — Akkermansia 유래 포스트바이오틱스의 항노로바이러스 기전 연구, UMass Amherst Matthew D. Moore 교수팀 국제공동연구", link: "https://www.hdnews.co.kr/news/articleView.html?idxno=356692", source: "현대경제" },
     { date: "2026.07", text: "식품의약품안전평가원 새로운 식품원료 전문가 자문단 위원 위촉 (2026.07–2028.07)" },
-    { date: "2026", text: "논문 게재 — 된장 미생물 군집과 휘발성 성분 비교 분석 (LWT, 공동교신저자)" },
+    { date: "2026", text: "논문 게재 — 된장 미생물 군집과 휘발성 성분 비교 분석 (LWT, 교신저자)" },
     { date: "2026", text: "논문 게재 — Liraglutide에 의한 장내 미생물 변화와 혈관 내피 기능 개선 (Biomedicine & Pharmacotherapy, 제1저자)" },
     { date: "2026.04", text: "섭화림(Hualin Nie) 연구원, 과학기술정보통신부·한국연구재단 2026 세종과학펠로우십 선정 — 국내 고구마 품종 기반 고부가가치 단백질 생산 플랫폼 개발", link: "https://www.dtnews24.com/news/articleView.html?idxno=811062", source: "디트NEWS24" },
     { date: "2026.03", text: "식약처 용역과제 시작 — 식용얼음 미생물 규격 조사 및 재평가 (연구책임자)" },
@@ -42,7 +42,7 @@ window.LAB = {
 
   /* ---------------- 논문 ----------------
      topic 값: virus(장내 바이러스) · micro(마이크로바이옴) · risk(위해성평가) · detect(검출기술) · etc(기타)
-     role 값 : "1st"(제1저자) · "co1st"(공동제1저자) · "corr"(교신저자) · "cocorr"(공동교신저자) · ""(공저자) */
+     role 값 : "1st"(제1저자) · "co1st"(공동제1저자) · "corr"(교신저자) · "cocorr"(교신저자로 표시) · ""(공저자) */
   publications: [
     { year: 2026, authors: "H Nie, K Sim, MK Kim, SH Suh", title: "Comparative analysis of microbial communities and volatile profiles in traditional Korean soybean paste (Doenjang)", journal: "LWT", cite: "120026", topic: "micro", role: "cocorr" },
     { year: 2026, authors: "EY Oh, SH Suh, S Byeon, J Lee, YH Lee, SK Choi", title: "Liraglutide alters gut microbiota and improves endothelium-dependent relaxation in db/db mice", journal: "Biomedicine & Pharmacotherapy", cite: "196, 119042", topic: "micro", role: "co1st" },
@@ -56,10 +56,10 @@ window.LAB = {
     { year: 2022, authors: "J Park, YJ Kim, SH Suh, MG Kim, HS Kwak, SH Kim, EJ Heo", title: "Evaluation of hygiene indicators and sampling plan for detecting microbial contamination in health functional foods", journal: "Journal of Food Protection", cite: "85(5), 844–848", topic: "risk", role: "" },
     { year: 2021, authors: "YJ Kim, JY Park, SH Suh, MG Kim, HS Kwak, SH Kim, EJ Heo", title: "Development and validation of a predictive model for pathogenic Escherichia coli in fresh-cut produce", journal: "Food Science & Nutrition", cite: "9(12), 6866–6872", topic: "risk", role: "" },
     { year: 2021, authors: "YJ Kim, JY Park, SH Suh, MG Kim, HS Kwak, SH Kim, EJ Heo", title: "Determination of statistical sampling criteria for microbial contamination of cereal and Saeng-sik products", journal: "LWT", cite: "151, 112129", topic: "risk", role: "" },
-    { year: 2021, authors: "GW Nam, M Jeong, EJ Heo, OK Chang, MG Kim, HS Kwak, SH Suh", title: "Quantitative microbial risk assessment of pathogenic Escherichia coli in commercial kimchi in South Korea", journal: "Food Science and Biotechnology", cite: "30(11), 1455–1464", topic: "risk", role: "" },
+    { year: 2021, authors: "GW Nam, M Jeong, EJ Heo, OK Chang, MG Kim, HS Kwak, SH Suh", title: "Quantitative microbial risk assessment of pathogenic Escherichia coli in commercial kimchi in South Korea", journal: "Food Science and Biotechnology", cite: "30(11), 1455–1464", topic: "risk", role: "corr" },
     { year: 2021, authors: "SH Suh, MK Kim", title: "Microbial communities related to sensory characteristics of commercial drinkable yogurt products in Korea", journal: "Innovative Food Science & Emerging Technologies", cite: "67, 102565", topic: "micro", role: "1st" },
     { year: 2020, authors: "GS Cho, M Stein, E Brinks, J Rathje, W Lee, SH Suh, CMAP Franz", title: "Serratia nevei sp. nov. and Serratia bockelmannii sp. nov., isolated from fresh produce in Germany and reclassification of Serratia marcescens subsp. sakuensis as a later heterotypic synonym of Serratia marcescens subsp. marcescens", journal: "Systematic and Applied Microbiology", cite: "43(2), 126055", topic: "etc", role: "" },
-    { year: 2019, authors: "WS Choi, N Son, JI Cho, IS Joo, JA Han, HS Kwak, JH Hong, SH Suh", title: "Predictive model of Staphylococcus aureus growth on egg products", journal: "Food Science and Biotechnology", cite: "28(3), 913–922", topic: "risk", role: "" },
+    { year: 2019, authors: "WS Choi, N Son, JI Cho, IS Joo, JA Han, HS Kwak, JH Hong, SH Suh", title: "Predictive model of Staphylococcus aureus growth on egg products", journal: "Food Science and Biotechnology", cite: "28(3), 913–922", topic: "risk", role: "corr" },
     { year: 2019, authors: "SH Suh, HS Yun, SE Lee, HS Kwak", title: "Novel peptide nucleic acid melting array for the detection and genotyping of Toxoplasma gondii", journal: "Microbiology and Biotechnology Letters", cite: "47(4), 645–650", topic: "detect", role: "1st" },
     { year: 2018, authors: "SH Suh, SJ Choi, HP Dwivedi, MD Moore, BI Escudero-Abarca, LA Jaykus", title: "Use of DNA aptamer for sandwich type detection of Listeria monocytogenes", journal: "Analytical Biochemistry", cite: "557, 27–33", topic: "detect", role: "1st" },
     { year: 2017, authors: "AN Kim, JI Cho, NR Son, WS Choi, SH Yoon, SH Suh, HS Kwak, IS Joo", title: "Development of a predictive model describing the growth of Staphylococcus aureus in pyeonyuk marketed", journal: "Journal of Food Hygiene and Safety", cite: "32(3)", topic: "risk", role: "" },

@@ -275,7 +275,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content
         <div>
           <h3>서수환 <span style="font-family:var(--f-body);font-weight:500;font-size:18px;color:var(--muted)">Soohwan Suh, Ph.D.</span></h3>
           <p class="role">조교수 · 학과장, 건양대학교 제약생명공학과</p>
-          <p class="bio">장관바이러스 연구자입니다. 노스캐롤라이나주립대에서 식품과학 박사학위를 받은 뒤, 식품의약품안전처 식품의약품안전평가원에서 11년간 연구직으로 식중독 바이러스와 미생물 위해성평가를 담당했습니다. 이 기간 중 2년간 미국 질병통제예방센터(CDC) 바이러스질환과에서 노로바이러스 분자역학과 장 엔테로이드 감염모델을 연구했습니다. 2024년 건양대학교에 부임했습니다.</p>
+          <p class="bio">장관바이러스 연구자입니다. 노스캐롤라이나주립대에서 박사학위를 받은 뒤, 식품의약품안전처 식품의약품안전평가원에서 11년간 연구직으로 식중독 바이러스와 미생물 위해성평가를 담당했습니다. 이 기간 중 2년간 미국 질병통제예방센터(CDC) 바이러스질환과에서 노로바이러스 분자역학과 장 엔테로이드 감염모델을 연구했습니다. 2024년 건양대학교에 부임했습니다.</p>
           <div class="links">
             <a href="https://scholar.google.co.kr/citations?user=sbL_JwIAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Google Scholar</a>
             <a href="#publications">논문 목록</a>
@@ -288,9 +288,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content
         <div>
           <h4 class="sub">학력</h4>
           <ul class="tl">
-            <li><span class="y">2012.12</span><span>Ph.D., 식품과학, North Carolina State University<small>지도교수 Lee-Ann Jaykus · Listeria spp. 특이 DNA 압타머 선별과 특성 연구</small></span></li>
-            <li><span class="y">2004.02</span><span>M.S., 생명공학, 고려대학교<small>감마선 조사 홍국균 변이주 연구</small></span></li>
-            <li><span class="y">2001.02</span><span>B.S., 식품공학, 건양대학교</span></li>
+            <li><span class="y">2012.12</span><span>Ph.D., North Carolina State University<small>Food, Bioprocessing and Nutrition Sciences · 지도교수 Lee-Ann Jaykus</small><small>학위논문: Listeria spp. 특이 DNA 압타머 선별과 특성 연구</small></span></li>
+            <li><span class="y">2004.02</span><span>M.S., 고려대학교 생물공학과<small>학위논문: 감마선 조사 홍국균 변이주 연구</small></span></li>
+            <li><span class="y">2001.02</span><span>B.S., 건양대학교</span></li>
           </ul>
         </div>
         <div>
@@ -309,7 +309,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content
             <li><span class="y">2026–2028</span><span>식품의약품안전처 식품위생심의위원회 위원<small>미생물분과</small></span></li>
             <li><span class="y">2026–2028</span><span>식품의약품안전평가원 새로운 식품원료 전문가 자문단 위원</span></li>
             <li><span class="y">2025–2028</span><span>식품의약품안전처 위해성평가 전문위원회 위원<small>식품 분야</small></span></li>
-            <li><span class="y">2018, 2019</span><span>Codex 항생제내성 특별위원회(TFAMR) 한국 대표단<small>부산(2018), 평창(2019)</small></span></li>
           </ul>
         </div>
         <div>
@@ -440,7 +439,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content
 
   /* publications */
   var TOPICS=[["all","전체"],["virus","장내 바이러스"],["micro","마이크로바이옴"],["risk","위해성평가"],["detect","검출기술"],["etc","기타"]];
-  var ROLE={"1st":"제1저자","co1st":"제1저자","corr":"교신저자","cocorr":"공동교신저자"};
+  var ROLE={"1st":"제1저자","co1st":"제1저자","corr":"교신저자","cocorr":"교신저자"};
   var pubs=LAB.publications.slice().sort(function(a,b){return b.year-a.year;});
   var cur="all";
   try{var saved=localStorage.getItem("evl-pub-topic"); if(saved && TOPICS.some(function(t){return t[0]===saved;})) cur=saved;}catch(e){}
