@@ -11,7 +11,7 @@ window.LAB = {
 
   /* ---------------- 화면 설정 ----------------
      showJoin: true 로 바꾸면 '함께하기'(학생 모집) 섹션이 다시 보입니다. */
-  settings: { showJoin: false },
+  settings: { showJoin: true },
 
   /* ---------------- News (최신이 위로) ---------------- */
   news: [
