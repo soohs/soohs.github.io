@@ -90,6 +90,15 @@ window.LAB = {
      { name: "홍길동", nameEn: "Gildong Hong", role: "학부연구생", since: "2026", topic: "노로바이러스 분자역학" } */
   members: [
     { name: "섭화림", nameEn: "Hualin Nie", role: "Ph.D. · 세종과학펠로우 · 제약생명공학과 강사, 산학협력단 박사후연구원", since: "", topic: "식물 기반 재조합 단백질 생산(면역관문 억제제 CTLA4·PD1), 니파바이러스·COVID-19 그린백신, 고구마 기반 고부가가치 단백질 생산 플랫폼, 발효식품 미생물 군집" }
+    ,{ name: "강민서", role: "학부연구생 · 22학번", since: "", topic: "" }
+    ,{ name: "신승빈", role: "학부연구생 · 22학번", since: "", topic: "" }
+    ,{ name: "윤송이", role: "학부연구생 · 23학번", since: "", topic: "" }
+    ,{ name: "김아름", role: "학부연구생 · 24학번", since: "", topic: "" }
+    ,{ name: "유희수", role: "학부연구생 · 24학번", since: "", topic: "" }
+    ,{ name: "신하균", role: "학부연구생 · 25학번", since: "", topic: "" }
+    ,{ name: "김채민", role: "학부연구생 · 25학번", since: "", topic: "" }
+    ,{ name: "장서연", role: "학부연구생 · 25학번", since: "", topic: "" }
+    ,{ name: "심규민", role: "학부연구생 · 26학번", since: "", topic: "" }
   ],
 
   alumni: []
