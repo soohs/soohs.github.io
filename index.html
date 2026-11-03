@@ -403,7 +403,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content
   <div class="wrap">
     <div class="label"><h2>함께하기</h2><span class="en">Join us</span></div>
     <div class="body">
-      <p class="intro">석사과정 대학원생과 학부연구생을 모집합니다. 바이러스와 미생물을 실험실에서 직접 다뤄 보고, 그 데이터를 분석해 논문으로 완성하는 과정을 함께합니다.</p>
+      <p class="intro">석사과정 대학원생을 모집합니다. 바이러스와 미생물을 실험실에서 직접 다뤄 보고, 그 데이터를 분석해 논문으로 완성하는 과정을 함께합니다.</p>
       <div class="grad">
         <h3>석사과정 모집</h3>
         <p>장내 바이러스, 장내 마이크로바이옴, 미생물 위해성평가 분야에서 연구할 석사과정 학생을 찾습니다. 연구에 전념할 수 있도록 다음을 지원합니다.</p>
@@ -424,11 +424,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content
           <li>식약처 연구과제 수행 경험</li>
         </ul>
       </div>
-      <div class="club">
-        <h3>연구동아리 mBiom</h3>
-        <p>제약생명공학과 학부생이 함께하는 연구동아리입니다. 장내 미생물과 바이러스를 주제로 실험과 데이터 분석을 경험하며, 연구실 활동으로 이어지는 입구 역할을 합니다.</p>
-      </div>
-      <p class="intro" style="font-size:16px">관심 있는 학생은 관심 주제와 함께 이메일로 연락 주세요. 석사과정 진학 상담은 언제든 환영하며, 공동연구와 산학협력 문의도 받습니다.</p>
+      <p class="intro" style="font-size:16px">석사과정에 관심 있는 학생은 관심 주제와 함께 이메일로 연락 주세요. 학부생 연구 참여는 이메일로 문의해 주세요. 공동연구와 산학협력 문의도 받습니다.</p>
     </div>
   </div>
 </section>
@@ -457,7 +453,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content
   </div>
 </footer>
 
-<script src="data/site-data.js?v=20261103-1752"></script>
+<script src="data/site-data.js?v=20261103-1755"></script>
 <script>
 (function(){
   var LAB = window.LAB || {news:[],projects:[],publications:[],members:[],alumni:[]};
@@ -523,7 +519,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content
     var face=m.photo?'<img src="'+esc(m.photo)+'" alt="" width="56" height="56" loading="lazy">':'<span class="ini">'+esc((m.name||"?").charAt(0))+'</span>';
     return '<div class="person">'+face+'<div><b>'+esc(m.name)+'</b><span>'+esc(m.role)+(m.since?' · '+esc(m.since)+'–':'')+'</span>'+(m.topic?'<span>'+esc(m.topic)+'</span>':'')+'</div></div>';
   }).join("");
-  if(SHOWJOIN) html+='<a class="open" href="#join">석사과정 · 학부연구생 모집 중 →</a>';
+  if(SHOWJOIN) html+='<a class="open" href="#join">석사과정 모집 중 →</a>';
   pe.innerHTML=html;
   if(!SHOWJOIN){ document.getElementById("join").hidden=true; var jl=document.querySelector('nav.toc a[href="#join"]'); if(jl) jl.parentNode.hidden=true; }
 
