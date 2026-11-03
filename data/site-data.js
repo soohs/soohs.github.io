@@ -89,7 +89,7 @@ window.LAB = {
      학생이 합류하면 아래 형식으로 추가하세요.
      { name: "홍길동", nameEn: "Gildong Hong", role: "학부연구생", since: "2026", topic: "노로바이러스 분자역학" } */
   members: [
-    { name: "섭화림", nameEn: "Hualin Nie", role: "연구원 · 세종과학펠로우", since: "", topic: "고구마 기반 고부가가치 단백질 생산 플랫폼, 발효식품 미생물 군집" }
+    { name: "섭화림", nameEn: "Hualin Nie", role: "Ph.D. · 제약생명공학과 강사, 산학협력단 박사후연구원", since: "", topic: "고구마 기반 고부가가치 단백질 생산 플랫폼, 발효식품 미생물 군집" }
   ],
 
   alumni: []
