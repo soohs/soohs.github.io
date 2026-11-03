@@ -137,7 +137,8 @@ section > .wrap{display:grid;grid-template-columns:200px minmax(0,1fr);gap:var(-
 /* members & join */
 .group{margin:0;display:flex;flex-direction:column;gap:var(--s2)}
 .group img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
-.gallery{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,5fr);gap:var(--s4);align-items:start}
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s5) var(--s4);align-items:start}
+.gallery .wide{grid-column:1 / -1}
 .gallery figure{margin:0;display:flex;flex-direction:column;gap:var(--s2)}
 .gallery img{width:100%;height:auto;border-radius:2px}
 .gallery figcaption{font-size:13px;color:var(--muted)}
@@ -175,6 +176,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content
 
 /* ---------- narrow ---------- */
 @media (max-width: 860px){
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
   .mast .wrap{grid-template-columns:minmax(0,1fr)}
   .capsid{justify-self:center;max-width:180px}
   section > .wrap{grid-template-columns:minmax(0,1fr);gap:var(--s5);padding-block:var(--s7)}
@@ -183,7 +185,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content
 }
 @media (max-width: 640px){
   body{font-size:15.5px}
-  .themes,.cv,.contact,.learn,.perks,.gallery{grid-template-columns:minmax(0,1fr)}
+  .themes,.cv,.contact,.learn,.perks{grid-template-columns:minmax(0,1fr)}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
   .pi{grid-template-columns:minmax(0,1fr)}
   .pi figure{max-width:200px}
   .proj li{grid-template-columns:minmax(0,1fr)}
@@ -386,7 +389,10 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content
         <h4 class="sub">활동 사진</h4>
         <div class="gallery">
           <figure><img src="images/kmb2026-poster.jpg" alt="KMB 2026 포스터 세션에서 윤송이 학생과 서수환 교수" width="751" height="1000" loading="lazy"><figcaption>KMB 2026 포스터 발표 · 한국 전통 된장의 지역별 미생물 다양성 (윤송이)</figcaption></figure>
-          <figure><img src="images/lab-group.jpg" alt="장내바이러스연구실 구성원 단체 사진, 2025년 10월" width="1600" height="799" loading="lazy"><figcaption>연구실 구성원 · 2025년 10월</figcaption></figure>
+          <figure><img src="images/kmb2026-session.jpg" alt="KMB 2026 포스터 세션을 둘러보는 심규민 학생" width="750" height="1000" loading="lazy"><figcaption>KMB 2026 포스터 세션 (심규민)</figcaption></figure>
+          <figure><img src="images/labcorps-2025.jpg" alt="2025 KY Lab-corps 경진대회 시상식" width="750" height="1000" loading="lazy"><figcaption>2025 KY Lab-corps 경진대회 시상식 · 메디컬 RISE 지·산·학·연·병 협력 Fair</figcaption></figure>
+          <figure><img src="images/lab-tubes.jpg" alt="튜브 랙에 놓인 배양액 코니컬 튜브" width="750" height="1000" loading="lazy"><figcaption>연구실 실험 장면</figcaption></figure>
+          <figure class="wide"><img src="images/lab-group.jpg" alt="장내바이러스연구실 구성원 단체 사진, 2025년 10월" width="1600" height="799" loading="lazy"><figcaption>연구실 구성원 · 2025년 10월</figcaption></figure>
         </div>
       </div>
     </div>
@@ -451,7 +457,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content
   </div>
 </footer>
 
-<script src="data/site-data.js?v=20261103-1745"></script>
+<script src="data/site-data.js?v=20261103-1752"></script>
 <script>
 (function(){
   var LAB = window.LAB || {news:[],projects:[],publications:[],members:[],alumni:[]};
