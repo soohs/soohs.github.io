@@ -136,7 +136,11 @@ section > .wrap{display:grid;grid-template-columns:200px minmax(0,1fr);gap:var(-
 
 /* members & join */
 .group{margin:0;display:flex;flex-direction:column;gap:var(--s2)}
-.group img{width:100%;height:auto;aspect-ratio:1600/799;object-fit:cover;border-radius:2px}
+.group img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
+.gallery{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,5fr);gap:var(--s4);align-items:start}
+.gallery figure{margin:0;display:flex;flex-direction:column;gap:var(--s2)}
+.gallery img{width:100%;height:auto;border-radius:2px}
+.gallery figcaption{font-size:13px;color:var(--muted)}
 .group figcaption{font-size:13px;color:var(--muted)}
 .people{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--s4)}
 .person{border:1px solid var(--rule);background:var(--sheet);padding:var(--s4);display:flex;gap:var(--s4);align-items:center}
@@ -179,7 +183,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content
 }
 @media (max-width: 640px){
   body{font-size:15.5px}
-  .themes,.cv,.contact,.learn,.perks{grid-template-columns:minmax(0,1fr)}
+  .themes,.cv,.contact,.learn,.perks,.gallery{grid-template-columns:minmax(0,1fr)}
   .pi{grid-template-columns:minmax(0,1fr)}
   .pi figure{max-width:200px}
   .proj li{grid-template-columns:minmax(0,1fr)}
@@ -376,8 +380,15 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);justify-content
   <div class="wrap">
     <div class="label"><h2>구성원</h2><span class="en">People</span></div>
     <div class="body">
-      <figure class="group"><img src="images/lab-group.jpg" alt="장내바이러스연구실 구성원 단체 사진" width="1600" height="799" loading="lazy"><figcaption>장내바이러스연구실 구성원 · 2025년 10월</figcaption></figure>
+      <figure class="group"><img src="images/kmb2026-group.jpg" alt="KMB 2026 학술대회에서 찍은 장내바이러스연구실 구성원 단체 사진" width="1600" height="1200" loading="lazy"><figcaption>장내바이러스연구실 구성원 · KMB 2026 학술대회, 경주 HICO (2026년 6월)</figcaption></figure>
       <div class="people" id="people"></div>
+      <div>
+        <h4 class="sub">활동 사진</h4>
+        <div class="gallery">
+          <figure><img src="images/kmb2026-poster.jpg" alt="KMB 2026 포스터 세션에서 윤송이 학생과 서수환 교수" width="751" height="1000" loading="lazy"><figcaption>KMB 2026 포스터 발표 · 한국 전통 된장의 지역별 미생물 다양성 (윤송이)</figcaption></figure>
+          <figure><img src="images/lab-group.jpg" alt="장내바이러스연구실 구성원 단체 사진, 2025년 10월" width="1600" height="799" loading="lazy"><figcaption>연구실 구성원 · 2025년 10월</figcaption></figure>
+        </div>
+      </div>
     </div>
   </div>
 </section>

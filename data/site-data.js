@@ -19,6 +19,7 @@ window.LAB = {
     { date: "2026.09", text: "식품의약품안전처 식품위생심의위원회 미생물분과 위원 위촉 (2026.09–2028.08)" },
     { date: "2026.09", text: "교육부 글로컬 R&D 지원사업 신규과제 선정 (식품생명공학과 김병용 교수 공동, 3년간 6억 원) — Akkermansia 유래 포스트바이오틱스의 항노로바이러스 기전 연구, UMass Amherst Matthew D. Moore 교수팀 국제공동연구", link: "https://www.hdnews.co.kr/news/articleView.html?idxno=356692", source: "현대경제" },
     { date: "2026.07", text: "식품의약품안전평가원 새로운 식품원료 전문가 자문단 위원 위촉 (2026.07–2028.07)" },
+    { date: "2026.06", text: "한국미생물·생명공학회 국제학술대회(KMB 2026, 경주 HICO) 참가 — 윤송이 학생 포스터 발표: 한국 전통 된장의 지역별 미생물 다양성과 유익 미생물 구성" },
     { date: "2026", text: "논문 게재 — 된장 미생물 군집과 휘발성 성분 비교 분석 (LWT, 교신저자)" },
     { date: "2026", text: "논문 게재 — Liraglutide에 의한 장내 미생물 변화와 혈관 내피 기능 개선 (Biomedicine & Pharmacotherapy, 제1저자)" },
     { date: "2026.04", text: "섭화림(Hualin Nie) 연구원, 과학기술정보통신부·한국연구재단 2026 세종과학펠로우십 선정 — 국내 고구마 품종 기반 고부가가치 단백질 생산 플랫폼 개발", link: "https://www.dtnews24.com/news/articleView.html?idxno=811062", source: "디트NEWS24" },
